@@ -59,3 +59,33 @@
         </form>
     </div>
 </div>
+
+<div class="modal fade" id="modal-succes" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content modal-content_success">
+			<button class="modal-content__close" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+					<path d="M1 1L11 11M1.00002 11L6.00002 6L11 1" stroke="#76757A" stroke-linecap="round" />
+				</svg>
+			</button>
+
+			<div class="modal-content__title-2">Заявка отправлена</div>
+			<div class="modal-content__desc-2">В близжайшее время наш менеджер свяжется с вами!</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modal-error" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content modal-content_error">
+			<button class="modal-content__close" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+					<path d="M1 1L11 11M1.00002 11L6.00002 6L11 1" stroke="#76757A" stroke-linecap="round" />
+				</svg>
+			</button>
+			<div class="modal-content__title-2">Ошибка отправки</div>
+			<div class="modal-content__desc-2">Попробуйте обновить страницу или связаться с нами по номеру телефона
+				<a href="tel:<?= str_replace(' ', '', file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/local/templates/' . SITE_TEMPLATE_ID . '/text/phone.php')) ?>">
+					<?= file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/local/templates/' . SITE_TEMPLATE_ID . '/text/phone.php') ?></a>
+			</div>
+		</div>
+	</div>
+</div>
