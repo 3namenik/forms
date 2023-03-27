@@ -13,7 +13,7 @@
                 <a href="tel:<?= str_replace(' ', '', file_get_contents($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/text/phone.php')) ?>">
                     <?= file_get_contents($_SERVER['DOCUMENT_ROOT'] . SITE_TEMPLATE_PATH . '/text/phone.php') ?></a>
             </div>
-            <form class="modal-content__form" id="modal-write-me-form">
+            <form class="modal-content__form" id="modal-write-me-form" action="/local/ajax/calback.php">
                 <? $url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
                 <input type="hidden" name="url" value="<?= $url ?>">
                 <input type="text" name="user-name" required placeholder="Имя">
