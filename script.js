@@ -30,7 +30,7 @@ class Forms {
                 action: 'submit'
             }).then(function(token) {
                 formData.append('recaptcha_token', token);
-                fetch('/local/ajax/callback.php', {
+                fetch(evt.target.action, {
                         method: 'POST',
                         body: formData
                     })
@@ -56,7 +56,7 @@ class Forms {
 
 /* Пример инициализации формы с модалкой */
 document.addEventListener('DOMContentLoaded', () => {
-    new Forms(document.getElementById('modal-write-me-form'), document.getElementById('modal-write-me'));
+    new Forms(document.getElementById('form-callback'), document.getElementById('modal-callback'));
 })
 
 /* Пример инициализации формы без модалки */
