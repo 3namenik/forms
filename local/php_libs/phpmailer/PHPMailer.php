@@ -852,6 +852,7 @@ class PHPMailer
      */
     private function mailPassthru($to, $subject, $body, $header, $params)
     {
+        $header = str_replace("\n", "\r\n", $header);
         //Check overloading of mail function to avoid double-encoding
         if (ini_get('mbstring.func_overload') & 1) {
             $subject = $this->secureHeader($subject);
